@@ -4,7 +4,21 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "store",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +47,11 @@
 	},
 	"sources": {
 		"contracts/SimpleStorage.sol": {
-			"keccak256": "0x73aea7a2fa69b4a53c2db687fa474403517414d4b9fd1bb0bb31035edec79c0d",
+			"keccak256": "0xcc39932804411bfa22d156984c43400cc9ab81a5626aeb7225bb32c0b4a7b855",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5ef1ab278e5381578ce07f143ae2d50eab0b5aa0010f03b85bc75e61a48439a0",
-				"dweb:/ipfs/QmUxXsbNMTxPAeMd2nSQHo2DsfwFsNFCqUY5Qv1tL4MBP2"
+				"bzz-raw://5bf41d09f393f13f3234c9f04dac1fd3babd6651e39a20dd5b07a96ff085abfc",
+				"dweb:/ipfs/QmQeNQguFzUcKc5cW6Ur29i4H7N1HcFG9y6fNo2vzwbFys"
 			]
 		}
 	},
