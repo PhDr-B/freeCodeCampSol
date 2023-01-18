@@ -6,69 +6,21 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_favoriteNumber",
-						"type": "uint256"
-					}
-				],
-				"name": "addPerson",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"name": "nameToFavoriteNumber",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "people",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "favoriteNumber",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
-				"name": "retrieve",
+				"name": "createSimpleStorageContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "sfGet",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -83,13 +35,37 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_favoriteNumber",
+						"name": "_simpleStorageIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_simpleStorageNumber",
 						"type": "uint256"
 					}
 				],
-				"name": "store",
+				"name": "sfStore",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "simpleStorageArray",
+				"outputs": [
+					{
+						"internalType": "contract SimpleStorage",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -106,7 +82,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/StorageFactory.sol": "SimpleStorage"
+			"contracts/StorageFactory.sol": "StorageFactory"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -120,12 +96,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/StorageFactory.sol": {
-			"keccak256": "0xb4d1d85eae2efd06e1d1fba6343ed40e31f183388844e97c29d668be3f3ffac2",
+		"contracts/SimpleStorage.sol": {
+			"keccak256": "0x72f7d89f42f9081bda6ff73c349b49b134dc2dbbe24f55aa77d8605d364ff7a1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c7971f11a3e870d52094231b8c84873424d4252725c04a12a7b789dfa7e3f494",
-				"dweb:/ipfs/QmZm6s1GCM5kLzMYEiYkBijw1KfLwJFpXtSNfbgVVYyraU"
+				"bzz-raw://3d2b5cc208df272422952b76ef373185d5655bf44bd1089a55f3d89ba5552072",
+				"dweb:/ipfs/QmeEKfmS5yxJaNAauMLPvkkWEGRC6xriBwAQN8mQq4vw5r"
+			]
+		},
+		"contracts/StorageFactory.sol": {
+			"keccak256": "0x40b6b0f6b4f18964fc382180cde4a6232976d7562a0ae6da20cb198e661ae9f6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7d8195a0acc02417ab96116dc1283ad5eceeabcbdf1e5eef51e621e5d8014c26",
+				"dweb:/ipfs/QmWhwjfLp4jSYw3cbWr4AJrLK9t25CbkSDTwY6AEPoWrx3"
 			]
 		}
 	},
