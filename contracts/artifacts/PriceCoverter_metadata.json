@@ -8,12 +8,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
+						"internalType": "uint256",
+						"name": "ethAmount",
+						"type": "uint256"
 					}
 				],
-				"name": "addressToAmountFunded",
+				"name": "getConversion",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -26,25 +26,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "fund",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
+				"name": "getPrice",
+				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"name": "funders",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -52,7 +39,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "minimumUsd",
+				"name": "getVersion",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -77,7 +64,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/FundMe.sol": "FundMe"
+			"contracts/PriceConverter.sol": "PriceCoverter"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -99,20 +86,12 @@
 				"dweb:/ipfs/QmeZUVwd26LzK4Mfp8Zba5JbQNkZFfTzFu1A6FVMMZDg9c"
 			]
 		},
-		"contracts/FundMe.sol": {
-			"keccak256": "0x31627db2733a33ae6cd092d46cda16724806b49e9011c4fa78b7b7f8c378fc26",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://67e9bb11428c0833ecd3f8a325ef02bec01184aee72aaef81fd9e17be1b607e1",
-				"dweb:/ipfs/QmZwH5Jasspg7q1AnqHwP3gzt7cNnGGHGE1rCLZYM5tW7F"
-			]
-		},
 		"contracts/PriceConverter.sol": {
-			"keccak256": "0xd76e1ff222861076081799d2789851683be3a4d7d618230198f335252d8b66bc",
+			"keccak256": "0x6361e31ca45e63ca772f4585696777f1764f9cfe47e07da4a37fe74e6efa043c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b3eeb9a675d70918f0cd6095fd7e182e967ba43ef3254829e3479927771e3d3e",
-				"dweb:/ipfs/QmR5WeVptM8oJ9mTqkFKeSuXfQVfxcAE9A4JdmQyFtfyYi"
+				"bzz-raw://5c1a8f734ceb3f0cc6acbd5acbd9ea59625346e62e67034ff5af844175b06872",
+				"dweb:/ipfs/QmZLaivYbJV3LDqYKyfhtcUpsYkfu9xNryuJjKxUa3Fd2U"
 			]
 		}
 	},
