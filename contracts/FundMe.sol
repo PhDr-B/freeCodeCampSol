@@ -7,20 +7,26 @@ pragma solidity ^0.8.8;
 
 import "./PriceConverter.sol";
 
+//Gas optimizations
+//constant and immutable keywords make variables that cannot change
+
+
+error NotOwner();
+
 contract FundMe {
 
     using PriceCoverter for uint256;
 
-    uint256 public minimumUsd = 50 * 1e18;
+    uint256 public constant MINIMUM_USD = 50 * 1e18;
     
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
-    address public owner;
+    address public immutable i_owner;
 
     //constructor immediately called on deployment
     constructor(){
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable {
@@ -28,7 +34,7 @@ contract FundMe {
         //1. How do we send ETH to this contract?
         //Contracts can hold funds like wallets do
         
-        require(msg.value.getConversionRate() >= minimumUsd, "Didn't send enough"); //1e18 == 1 eth in wei, also need to get ETH to USD for this (oracle)
+        require(msg.value.getConversionRate() >= MINIMUM_USD, "Didn't send enough"); //1e18 == 1 eth in wei, also need to get ETH to USD for this (oracle)
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = msg.value;
     }
@@ -50,7 +56,19 @@ contract FundMe {
     }
 
     modifier onlyOwner {
-        require(msg.sender == owner, "Sender is not owner!");
+        //require(msg.sender == i_owner, NotOwner());
+        if(msg.sender != i_owner) {revert NotOwner();}
         _; //run the rest of the function code
     }
+
+    //What happens if someone sends this contract ETH without calling the fund function?
+
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+    }
+
 }
